@@ -1,13 +1,16 @@
 package model;
 
-public class GatilhoDor {
+public class GatilhoDor extends InformacaoDor{
+	// atributos
 	public String recorrencia_gatilho;
-
-	public GatilhoDor(String recorrencia_gatilho) {
-		super();
+	
+	// construtor
+	public GatilhoDor(String nome, String descricao, String recorrencia_gatilho) {
+		super(nome, descricao);
 		this.recorrencia_gatilho = recorrencia_gatilho;
 	}
 
+	// gets e sets
 	public String getRecorrencia_gatilho() {
 		return recorrencia_gatilho;
 	}

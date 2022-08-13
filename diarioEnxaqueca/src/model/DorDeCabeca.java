@@ -1,13 +1,18 @@
 package model;
 
 public class DorDeCabeca {
+	// atributos
 	private String data_dor;
 	private String hora_inicio;
 	private int duracao_dor;
 	private int pontuacao_dor;
 	private String nota;
 	private String local_dor;
-
+	private SintomaDor sintoma_dor;
+	private GatilhoDor gatilho_dor;
+	private MedicacaoUtilizada medicacao_utilizada;
+	
+	// construtor
 	public DorDeCabeca(String data_dor, String hora_inicio, int duracao_dor, int pontuacao_dor, String nota,
 			String local_dor) {
 		super();
@@ -18,7 +23,8 @@ public class DorDeCabeca {
 		this.nota = nota;
 		this.local_dor = local_dor;
 	}
-
+	
+	// gets e sets
 	public String getData_dor() {
 		return data_dor;
 	}
@@ -67,4 +73,27 @@ public class DorDeCabeca {
 		this.local_dor = local_dor;
 	}
 
+	public SintomaDor getSintoma_dor() {
+		return sintoma_dor;
+	}
+
+	public void setSintoma_dor(SintomaDor sintoma_dor) {
+		this.sintoma_dor = sintoma_dor;
+	}
+
+	public GatilhoDor getGatilho_dor() {
+		return gatilho_dor;
+	}
+
+	public void setGatilho_dor(GatilhoDor gatilho_dor) {
+		this.gatilho_dor = gatilho_dor;
+	}
+
+	public MedicacaoUtilizada getMedicacao_utilizada() {
+		return medicacao_utilizada;
+	}
+
+	public void setMedicacao_utilizada(MedicacaoUtilizada medicacao_utilizada) {
+		this.medicacao_utilizada = medicacao_utilizada;
+	}
 }

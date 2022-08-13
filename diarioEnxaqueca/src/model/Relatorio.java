@@ -3,6 +3,7 @@ package model;
 public class Relatorio {
 	private String data_inicio;
 	private String data_fim;
+	private DorDeCabeca[] dores = new DorDeCabeca[31];
 
 	public Relatorio(String data_inicio, String data_fim) {
 		super();
@@ -26,4 +27,11 @@ public class Relatorio {
 		this.data_fim = data_fim;
 	}
 
+	public DorDeCabeca[] getDores() {
+		return dores;
+	}
+
+	public void setDores(DorDeCabeca[] dores) {
+		this.dores = dores;
+	}
 }

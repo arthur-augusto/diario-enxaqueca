@@ -1,15 +1,18 @@
 package model;
 
 public abstract class InformacaoDor {
+	// atributos
 	public String nome;
 	public String descricao;
 
+	// construtor
 	public InformacaoDor(String nome, String descricao) {
 		super();
 		this.nome = nome;
 		this.descricao = descricao;
 	}
 
+	// gets e sets
 	public String getNome() {
 		return nome;
 	}
