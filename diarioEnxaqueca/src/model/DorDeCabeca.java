@@ -1,7 +1,14 @@
+/**
+ * Uma entrada no diário.
+ * @author Ana Letícia Melo Pereira & Arthur Augusto Rezende da Paixão
+ * @since 2022
+ * @version 1.0
+ */
+
 package model;
 
 public class DorDeCabeca {
-	// atributos
+	
 	private String data_dor;
 	private String hora_inicio;
 	private int duracao_dor;
@@ -12,7 +19,16 @@ public class DorDeCabeca {
 	private GatilhoDor gatilho_dor;
 	private MedicacaoUtilizada medicacao_utilizada;
 	
-	// construtor
+	/**
+	 * Cria uma entrada no diário com uma data e hora de inicio, pontuação, etc..
+	 * @param data_dor	data do começo da dor.
+	 * @param hora_inicio	hora de início da dor.
+	 * @param duracao_dor	duração da dor em horas.
+	 * @param pontuacao_dor	pontuação da dor, de 1 a 10.
+	 * @param nota	anotações breves sobre a dor
+	 * @param local_dor	parte da cabeça em que a dor ocorreu.
+	 */
+	
 	public DorDeCabeca(String data_dor, String hora_inicio, int duracao_dor, int pontuacao_dor, String nota,
 			String local_dor) {
 		super();
@@ -24,7 +40,6 @@ public class DorDeCabeca {
 		this.local_dor = local_dor;
 	}
 	
-	// gets e sets
 	public String getData_dor() {
 		return data_dor;
 	}

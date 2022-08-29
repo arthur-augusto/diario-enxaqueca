@@ -1,3 +1,10 @@
+/**
+ * Um mini-Dashboard a respeito de todas as dores de cabeça do usuário.
+ * @author Ana Letícia Melo Pereira & Arthur Augusto Rezende da Paixão
+ * @since 2022
+ * @version 1.0
+ */
+
 package view;
 
 import java.awt.*;
@@ -7,18 +14,15 @@ import javax.swing.JLabel;
 
 public class TelaDashboard {
 	
-	// Fontes para as metricas
 	final Font numero = new Font("Arial", Font.BOLD, 28);
 	final Font texto = new Font("Arial", Font.PLAIN, 18);
 	
-	// Dados provisorios
 	final String diasSemDor = "10";
 	final String doresEsteMes = "02";
 	final String doresMesPassado = "03";
 	final String mediaDuracao = "03";
 	final String mediaPontuacao = "04";
 	
-	// Criando componentes da TelaDashboard
 	public JFrame frameDashboard = new JFrame("Dashboard");
 	
 	public JLabel numeroSemDor = new JLabel(diasSemDor);
@@ -36,15 +40,16 @@ public class TelaDashboard {
 	public JLabel numeroPontuacaoMedia = new JLabel(mediaPontuacao);
 	public JLabel textoPontuacaoMedia = new JLabel("Pontuação média de dor");
 	
-	// Construtor da TelaDashboard
+	/**
+	 * Cria uma tela com 5 métricas, baseadas em todas as dores de cabeça cadastradas.
+	 */
+	
 	public TelaDashboard() {
 		
-		// Configurando o JFrame
 		frameDashboard.setLayout(null);
 		
 		frameDashboard.setSize(400, 300);
 		
-		// Configurando as fontes das JLabels
 		numeroSemDor.setFont(numero);
 		textoSemDor.setFont(texto);
 		
@@ -60,7 +65,6 @@ public class TelaDashboard {
 		numeroPontuacaoMedia.setFont(numero);
 		textoPontuacaoMedia.setFont(texto);
 		
-		// Posicionando e definindo o tamanho dos componentes
 		numeroSemDor.setBounds(5, 5, 50, 30);
 		textoSemDor.setBounds(60, 5, 300, 30);
 
@@ -76,7 +80,6 @@ public class TelaDashboard {
 		numeroPontuacaoMedia.setBounds(5, 145, 50, 30);
 		textoPontuacaoMedia.setBounds(60, 145, 300, 30);
 
-		// Adicionando componentes
 		frameDashboard.add(numeroSemDor);
 		frameDashboard.add(textoSemDor);
 		
@@ -92,8 +95,6 @@ public class TelaDashboard {
 		frameDashboard.add(numeroPontuacaoMedia);
 		frameDashboard.add(textoPontuacaoMedia);
 		
-		// Tornando o frameDashboard visivel
 		frameDashboard.setVisible(true);
 	}
-	
 }
