@@ -22,7 +22,7 @@ public class TelaRelatorio {
 		
 		frameRelatorio.setLayout(null);
 		
-		frameRelatorio.setSize(400, 300);
+		frameRelatorio.setSize(500, 375);
 		
 		frameRelatorio.setVisible(true);
 	}

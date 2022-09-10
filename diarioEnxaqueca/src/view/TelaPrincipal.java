@@ -28,16 +28,16 @@ public class TelaPrincipal implements ActionListener {
 		
 		framePrincipal.setLayout(null);
 		
-		framePrincipal.setSize(400, 300);
+		framePrincipal.setSize(500, 375);
 		
 		framePrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		titulo.setFont(new Font("Arial", Font.BOLD, 32));
 		
-		titulo.setBounds(5, 5, 380, 30);
-		dashboard.setBounds(150, 50, 100, 30);
-		entradas.setBounds(150, 90, 100, 30);
-		relatorio.setBounds(150, 130, 100, 30);
+		titulo.setBounds(62, 50, 375, 35);
+		dashboard.setBounds(200, 132, 100, 30);
+		entradas.setBounds(200, 172, 100, 30);
+		relatorio.setBounds(200, 212, 100, 30);
 
 		framePrincipal.add(titulo);
 		framePrincipal.add(dashboard);

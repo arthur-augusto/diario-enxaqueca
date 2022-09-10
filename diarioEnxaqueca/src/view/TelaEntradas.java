@@ -33,15 +33,16 @@ public class TelaEntradas implements ActionListener, ListSelectionListener {
 		
 		frameEntradas.setLayout(null);
 		
-		frameEntradas.setSize(400, 300);
+		frameEntradas.setSize(500, 375);
 		
-		adicionarEntrada.setBounds(120, 195, 160, 30);
-		listaEntradas.setBounds(20, 50, 350, 120);
+		listaEntradas.setBounds(20, 50, 445, 180);
 		listaEntradas.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		listaEntradas.setVisibleRowCount(10);
 		
-		frameEntradas.add(adicionarEntrada);
+		adicionarEntrada.setBounds(170, 260, 160, 30);
+
 		frameEntradas.add(listaEntradas);
+		frameEntradas.add(adicionarEntrada);
 		
 		frameEntradas.setVisible(true);
 		

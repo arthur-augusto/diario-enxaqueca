@@ -13,7 +13,7 @@ public class DorDeCabeca {
 	private String hora_inicio;
 	private int duracao_dor;
 	private int pontuacao_dor;
-	private String nota;
+	private String notas;
 	private String local_dor;
 	private SintomaDor sintoma_dor;
 	private GatilhoDor gatilho_dor;
@@ -36,7 +36,7 @@ public class DorDeCabeca {
 		this.hora_inicio = hora_inicio;
 		this.duracao_dor = duracao_dor;
 		this.pontuacao_dor = pontuacao_dor;
-		this.nota = nota;
+		this.notas = nota;
 		this.local_dor = local_dor;
 	}
 	
@@ -73,11 +73,11 @@ public class DorDeCabeca {
 	}
 
 	public String getNota() {
-		return nota;
+		return notas;
 	}
 
 	public void setNota(String nota) {
-		this.nota = nota;
+		this.notas = nota;
 	}
 
 	public String getLocal_dor() {

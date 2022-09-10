@@ -48,7 +48,7 @@ public class TelaDashboard {
 		
 		frameDashboard.setLayout(null);
 		
-		frameDashboard.setSize(400, 300);
+		frameDashboard.setSize(500, 375);
 		
 		numeroSemDor.setFont(numero);
 		textoSemDor.setFont(texto);
