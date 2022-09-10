@@ -11,13 +11,14 @@ import javax.swing.*;
 
 public class TelaRelatorio {
 	
-	public JFrame frameRelatorio = new JFrame("Relatório");
+	private JFrame frameRelatorio;
 	
 	/**
 	 * Cria uma tela com 4 métricas de um período, que o usuário seleciona de uma lista.
 	 */
 	
 	public TelaRelatorio() {
+		frameRelatorio = new JFrame("Relatório");
 		
 		frameRelatorio.setLayout(null);
 		

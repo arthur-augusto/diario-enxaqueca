@@ -23,22 +23,22 @@ public class TelaDashboard {
 	final String mediaDuracao = "03";
 	final String mediaPontuacao = "04";
 	
-	public JFrame frameDashboard = new JFrame("Dashboard");
+	private JFrame frameDashboard = new JFrame("Dashboard");
 	
-	public JLabel numeroSemDor = new JLabel(diasSemDor);
-	public JLabel textoSemDor = new JLabel("Dias sem dores de cabeça");
+	private JLabel numeroSemDor = new JLabel(diasSemDor);
+	private JLabel textoSemDor = new JLabel("Dias sem dores de cabeça");
 	
-	public JLabel numeroEsteMes = new JLabel(doresEsteMes);
-	public JLabel textoEsteMes = new JLabel("Dores de cabeça este mês");
+	private JLabel numeroEsteMes = new JLabel(doresEsteMes);
+	private JLabel textoEsteMes = new JLabel("Dores de cabeça este mês");
 	
-	public JLabel numeroMesPassado = new JLabel(doresMesPassado);
-	public JLabel textoMesPassado = new JLabel("Dores de cabeça no mês passado");
+	private JLabel numeroMesPassado = new JLabel(doresMesPassado);
+	private JLabel textoMesPassado = new JLabel("Dores de cabeça no mês passado");
 	
-	public JLabel numeroDuracaoMedia = new JLabel(mediaDuracao);
-	public JLabel textoDuracaoMedia = new JLabel("Duração média");
+	private JLabel numeroDuracaoMedia = new JLabel(mediaDuracao);
+	private JLabel textoDuracaoMedia = new JLabel("Duração média");
 	
-	public JLabel numeroPontuacaoMedia = new JLabel(mediaPontuacao);
-	public JLabel textoPontuacaoMedia = new JLabel("Pontuação média de dor");
+	private JLabel numeroPontuacaoMedia = new JLabel(mediaPontuacao);
+	private JLabel textoPontuacaoMedia = new JLabel("Pontuação média de dor");
 	
 	/**
 	 * Cria uma tela com 5 métricas, baseadas em todas as dores de cabeça cadastradas.
