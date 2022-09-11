@@ -11,6 +11,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+import control.*;
+
 public class TelaPrincipal implements ActionListener {
 	
 	private JFrame framePrincipal = new JFrame("Diário de Dor de Cabeça");
@@ -18,6 +20,8 @@ public class TelaPrincipal implements ActionListener {
 	private JLabel titulo = new JLabel("Diário de Dor de Cabeça");
 	private static JButton entradas = new JButton("Entradas");
 	private static JButton relatorio = new JButton("Relatório");
+	
+	private ControleDados dados = new ControleDados();
 
 	/**
 	 * Cria a tela principal com um título e três butões.
@@ -53,7 +57,7 @@ public class TelaPrincipal implements ActionListener {
 		
 		
 		if(src == entradas)
-			new TelaEntradas();
+			new TelaEntradas(dados);
 		
 		if(src == relatorio)
 			new TelaRelatorio();
