@@ -20,8 +20,6 @@ public class TelaRelatorio {
 	final String gatilhoMaisComum = "atividade física";
 	final String dorMaisComum = "enxaqueca";
 	
-	
-	
 	private JFrame frameRelatorio;
 	
 	private JLabel labelDataInicial;
