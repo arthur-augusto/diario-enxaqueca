@@ -16,7 +16,6 @@ public class TelaPrincipal implements ActionListener {
 	private JFrame framePrincipal = new JFrame("Diário de Dor de Cabeça");
 	
 	private JLabel titulo = new JLabel("Diário de Dor de Cabeça");
-	private static JButton dashboard = new JButton("Dashboard");
 	private static JButton entradas = new JButton("Entradas");
 	private static JButton relatorio = new JButton("Relatório");
 
@@ -35,12 +34,10 @@ public class TelaPrincipal implements ActionListener {
 		titulo.setFont(new Font("Arial", Font.BOLD, 32));
 		
 		titulo.setBounds(62, 50, 375, 35);
-		dashboard.setBounds(200, 132, 100, 30);
 		entradas.setBounds(200, 172, 100, 30);
 		relatorio.setBounds(200, 212, 100, 30);
 
 		framePrincipal.add(titulo);
-		framePrincipal.add(dashboard);
 		framePrincipal.add(entradas);
 		framePrincipal.add(relatorio);
 
@@ -54,8 +51,6 @@ public class TelaPrincipal implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
-		if(src == dashboard)
-			new TelaDashboard();
 		
 		if(src == entradas)
 			new TelaEntradas();
@@ -70,7 +65,6 @@ public class TelaPrincipal implements ActionListener {
 	public static void main(String args[]) {
 		TelaPrincipal janelaPrincipal = new TelaPrincipal();
 		
-		dashboard.addActionListener(janelaPrincipal);
 		entradas.addActionListener(janelaPrincipal);
 		relatorio.addActionListener(janelaPrincipal);
 	}
