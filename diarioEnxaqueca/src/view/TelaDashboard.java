@@ -17,28 +17,25 @@ public class TelaDashboard {
 	final Font numero = new Font("Arial", Font.BOLD, 28);
 	final Font texto = new Font("Arial", Font.PLAIN, 18);
 	
-	final String diasSemDor = "10";
-	final String doresEsteMes = "02";
-	final String doresMesPassado = "03";
+	final String totalDores = "10";
 	final String mediaDuracao = "03";
 	final String mediaPontuacao = "04";
+	final String gatilhoMaisComum = "estresse";
 	
 	private JFrame frameDashboard = new JFrame("Dashboard");
 	
-	private JLabel numeroSemDor = new JLabel(diasSemDor);
-	private JLabel textoSemDor = new JLabel("Dias sem dores de cabeça");
+	private JLabel numeroDores = new JLabel(totalDores);
+	private JLabel textoDores = new JLabel("Total de dores de cabeça");
 	
-	private JLabel numeroEsteMes = new JLabel(doresEsteMes);
-	private JLabel textoEsteMes = new JLabel("Dores de cabeça este mês");
-	
-	private JLabel numeroMesPassado = new JLabel(doresMesPassado);
-	private JLabel textoMesPassado = new JLabel("Dores de cabeça no mês passado");
+	private JLabel nomeGatilho = new JLabel(gatilhoMaisComum);
+	private JLabel textoGatilho = new JLabel("Gatilho mais comum");
 	
 	private JLabel numeroDuracaoMedia = new JLabel(mediaDuracao);
 	private JLabel textoDuracaoMedia = new JLabel("Duração média");
 	
 	private JLabel numeroPontuacaoMedia = new JLabel(mediaPontuacao);
 	private JLabel textoPontuacaoMedia = new JLabel("Pontuação média de dor");
+	
 	
 	/**
 	 * Cria uma tela com 5 métricas, baseadas em todas as dores de cabeça cadastradas.
@@ -50,14 +47,11 @@ public class TelaDashboard {
 		
 		frameDashboard.setSize(500, 375);
 		
-		numeroSemDor.setFont(numero);
-		textoSemDor.setFont(texto);
+		numeroDores.setFont(numero);
+		textoDores.setFont(texto);
 		
-		numeroEsteMes.setFont(numero);
-		textoEsteMes.setFont(texto);
-		
-		numeroMesPassado.setFont(numero);
-		textoMesPassado.setFont(texto);
+		nomeGatilho.setFont(numero);
+		textoGatilho.setFont(texto);
 		
 		numeroDuracaoMedia.setFont(numero);
 		textoDuracaoMedia.setFont(texto);
@@ -65,29 +59,23 @@ public class TelaDashboard {
 		numeroPontuacaoMedia.setFont(numero);
 		textoPontuacaoMedia.setFont(texto);
 		
-		numeroSemDor.setBounds(5, 5, 50, 30);
-		textoSemDor.setBounds(60, 5, 300, 30);
+		numeroDores.setBounds(15, 5, 50, 30);
+		textoDores.setBounds(60, 5, 300, 30);
+		
+		numeroDuracaoMedia.setBounds(15, 35, 50, 30);
+		textoDuracaoMedia.setBounds(60, 35, 300, 30);
+		
+		numeroPontuacaoMedia.setBounds(15, 65, 50, 30);
+		textoPontuacaoMedia.setBounds(60, 65, 300, 30);
 
-		numeroEsteMes.setBounds(5, 40, 50, 30);
-		textoEsteMes.setBounds(60, 40, 300, 30);
+		nomeGatilho.setBounds(15, 95, 1000, 30);
+		textoGatilho.setBounds(15, 120, 300, 30);
 		
-		numeroMesPassado.setBounds(5, 75, 50, 30);
-		textoMesPassado.setBounds(60, 75, 300, 30);
+		frameDashboard.add(numeroDores);
+		frameDashboard.add(textoDores);
 		
-		numeroDuracaoMedia.setBounds(5, 110, 50, 30);
-		textoDuracaoMedia.setBounds(60, 110, 300, 30);
-		
-		numeroPontuacaoMedia.setBounds(5, 145, 50, 30);
-		textoPontuacaoMedia.setBounds(60, 145, 300, 30);
-
-		frameDashboard.add(numeroSemDor);
-		frameDashboard.add(textoSemDor);
-		
-		frameDashboard.add(numeroEsteMes);
-		frameDashboard.add(textoEsteMes);
-		
-		frameDashboard.add(numeroMesPassado);
-		frameDashboard.add(textoMesPassado);
+		frameDashboard.add(nomeGatilho);
+		frameDashboard.add(textoGatilho);
 		
 		frameDashboard.add(numeroDuracaoMedia);
 		frameDashboard.add(textoDuracaoMedia);

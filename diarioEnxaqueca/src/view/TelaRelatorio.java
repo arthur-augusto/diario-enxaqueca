@@ -8,22 +8,18 @@
 package view;
 
 import java.awt.event.ActionEvent;
-
+import java.awt.event.*;
 import javax.swing.*;
 
-public class TelaRelatorio {
+public class TelaRelatorio implements ActionListener {
 	
 	
-	final String doresTotais = "10";
-	final String mediaPontuacao = "02";
-	final String mediaDuracao = "03";
-	final String gatilhoMaisComum = "atividade física";
-	final String dorMaisComum = "enxaqueca";
 	
 	private JFrame frameRelatorio;
 	
 	private JLabel labelDataInicial;
 	private JLabel labelDataFinal;
+	private JLabel labelDoresTotais;
 	
 	private JTextField valorDiaInicial;
 	private JTextField valorMesInicial;
@@ -34,7 +30,7 @@ public class TelaRelatorio {
 	private JTextField valorAnoFinal;
 	
 	private String titulo;
-	private static JButton mostrarRelatorio;
+	private JButton mostrarRelatorio;
 
 	
 	/**
@@ -61,6 +57,8 @@ public class TelaRelatorio {
 		valorAnoFinal = new JTextField(4);
 		
 		
+		
+		
 		labelDataInicial.setBounds(10, 10, 175, 25);
 		valorDiaInicial.setBounds(225, 10, 30, 25);
 		valorMesInicial.setBounds(260, 10, 30, 25);
@@ -71,9 +69,10 @@ public class TelaRelatorio {
 		valorMesFinal.setBounds(260, 50, 30, 25);
 		valorAnoFinal.setBounds(295, 50, 40, 25);
 		
+		
 		mostrarRelatorio.setBounds(10, 90, 160, 20);
 
-		
+
 		frameRelatorio.add(labelDataInicial);
 		frameRelatorio.add(valorDiaInicial);
 		frameRelatorio.add(valorMesInicial);
@@ -84,6 +83,7 @@ public class TelaRelatorio {
 		frameRelatorio.add(valorMesFinal);
 		frameRelatorio.add(valorAnoFinal);
 		frameRelatorio.add(mostrarRelatorio);
+		mostrarRelatorio.addActionListener(this);
 				
 		frameRelatorio.setVisible(true);
 	}
@@ -92,7 +92,8 @@ public class TelaRelatorio {
 		Object src = e.getSource();
 		
 		if (src == mostrarRelatorio) {
-			
+			new TelaDashboard();
+
 		}
 	}
 }
