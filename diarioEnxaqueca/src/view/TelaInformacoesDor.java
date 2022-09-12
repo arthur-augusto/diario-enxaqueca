@@ -26,6 +26,8 @@ public class TelaInformacoesDor implements ActionListener, ListSelectionListener
 	private String[] listaNomes = new String[40];
 	
 	private JButton adicionarInformacao;
+	private JButton adicionarNovaInformacao;
+	private JButton refreshInformacao;
 	
 	private String infoSelecionada;
 	
@@ -54,6 +56,8 @@ public class TelaInformacoesDor implements ActionListener, ListSelectionListener
 		frameInformacoesDor = new JFrame(info);
 		listaInformacoes = new JList<String>(listaNomes);
 		adicionarInformacao = new JButton("ADICIONAR " + info.toUpperCase());
+		adicionarNovaInformacao = new JButton("ADICIONAR NOVO " + info.toUpperCase());
+		refreshInformacao = new JButton("REFRESH");
 		
 		frameInformacoesDor.setLayout(null);
 		frameInformacoesDor.setSize(500, 375);
@@ -62,16 +66,21 @@ public class TelaInformacoesDor implements ActionListener, ListSelectionListener
 		listaInformacoes.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		listaInformacoes.setVisibleRowCount(15);
 		
-		adicionarInformacao.setBounds(165, 260, 170, 30);
+		adicionarInformacao.setBounds(165, 240, 170, 30);
+		adicionarNovaInformacao.setBounds(66, 280, 200, 30);
+		refreshInformacao.setBounds(332, 280, 100, 30);
 		
 		frameInformacoesDor.add(listaInformacoes);
 		frameInformacoesDor.add(adicionarInformacao);
+		frameInformacoesDor.add(adicionarNovaInformacao);
+		frameInformacoesDor.add(refreshInformacao);
 		
 		frameInformacoesDor.setVisible(true);
 		
 		listaInformacoes.addListSelectionListener(this);
 		adicionarInformacao.addActionListener(this);
-		
+		adicionarNovaInformacao.addActionListener(this);
+		refreshInformacao.addActionListener(this);
 	}
 	
 	public void valueChanged(ListSelectionEvent e) {
@@ -84,8 +93,27 @@ public class TelaInformacoesDor implements ActionListener, ListSelectionListener
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
-		if(src == adicionarInformacao) {
+		if(src == adicionarNovaInformacao) {
 			new TelaDetalheInformacaoDor().adicionarOuEditarInformacao(infoSelecionada, dados, 0, 0);
 		}
+		
+		if (src == refreshInformacao) {
+			
+			if (infoSelecionada == "Sintoma") {
+				listaInformacoes.setListData(new ControleSintomaDor(dados).getNomesSintomas());			
+			}
+			
+			if(infoSelecionada == "Gatilho") {
+				listaInformacoes.setListData(new ControleGatilhoDor(dados).getNomesGatilhos());			
+			}
+			
+			if(infoSelecionada == "Medicação") {
+				listaInformacoes.setListData(new ControleMedicacaoUtilizada(dados).getNomesMedicacoes());			
+			}
+			
+			listaInformacoes.updateUI();
+		}
+		
+		
 	}
 }

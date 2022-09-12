@@ -40,11 +40,20 @@ public class TelaDetalheInformacaoDor implements ActionListener{
 	private JButton butaoSalvar;
 	private JButton butaoExcluir;
 	
+	private int posicao;
+	private int opcao;
+	private String informacao;
+	
+	private String[] novoDado = new String[7];
+	
 	private String titulo;
 	
 	public void adicionarOuEditarInformacao(String info, ControleDados d, int op, int pos) {
 		
 		dados = d;
+		opcao = op;
+		posicao = pos;
+		informacao = info;
 		
 		if (op == 0) titulo = "Adicionar ";
 		if (op == 1) titulo = "Editar ";
@@ -250,6 +259,45 @@ public class TelaDetalheInformacaoDor implements ActionListener{
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		Object src = e.getSource();
 		
+		if(src == butaoSalvar) {
+			
+			if(opcao == 0) {
+				if (informacao == "Sintoma")
+				novoDado[0] = Integer.toString(dados.getQtdSintomas());
+				
+				if (informacao == "Gatilho")
+				novoDado[0] = Integer.toString(dados.getQtdGatilhos());
+				
+				if (informacao == "Medicação")
+				novoDado[0] = Integer.toString(dados.getQtdMedicacoes());
+			}
+			else {
+				novoDado[0] = Integer.toString(posicao);
+			}
+			
+			novoDado[1] = valorNome.getText();
+			novoDado[2] = valorDescricao.getText();
+			if(informacao == "Sintoma") {
+				novoDado[3] = valorDuracaoSintoma.getText();
+			}
+			if(informacao == "Gatilho") {
+				novoDado[3] = valorRecorrenciaGatilho.getText();
+			}
+			if(informacao == "Medicacao") {
+				novoDado[3] = valorDosagem.getText();
+				novoDado[4] = valorEficacia.getText();
+			}
+			
+			dados.inserirAtualizarInformacao(novoDado, informacao);
+			frameDetalheInformacao.dispose();
+			
+		}
+		
+		if(src == butaoExcluir) {
+			dados.excluirInformacao(posicao, informacao);
+			frameDetalheInformacao.dispose();
+		}
 	}
 }

@@ -331,10 +331,13 @@ public class TelaDetalheEntrada implements ActionListener {
 			
 			dados.inserirAtualizarEntrada(novoDado);
 			frameDetalheEntrada.dispose();
+			
 		}
 		
 		if(src == butaoExcluir) {
 			
+			dados.excluirEntrada(posicao);
+			frameDetalheEntrada.dispose();
 		}
 	}
 	

@@ -105,6 +105,11 @@ public class Dados {
 		this.sintomas = sintomas;
 	}
 	
+	public void inserirEditarSintoma(SintomaDor sin, int pos) {
+		this.sintomas[pos] = sin;
+		if(pos == qtdSintomas) qtdSintomas++;
+	}
+	
 	public int getQtdSintomas() {
 		return qtdSintomas;
 	}
@@ -121,6 +126,11 @@ public class Dados {
 		this.gatilhos = gatilhos;
 	}
 	
+	public void inserirEditarGatilho(GatilhoDor gat, int pos) {
+		this.gatilhos[pos] = gat;
+		if(pos == qtdGatilhos) qtdGatilhos++;
+	}
+	
 	public int getQtdGatilhos() {
 		return qtdGatilhos;
 	}
@@ -135,6 +145,11 @@ public class Dados {
 	
 	public void setMedicacoes(MedicacaoUtilizada[] medicacoes) {
 		this.medicacoes = medicacoes;
+	}
+	
+	public void inserirEditarMedicacao(MedicacaoUtilizada med, int pos) {
+		this.medicacoes[pos] = med;
+		if(pos == qtdMedicacoes) qtdMedicacoes++;
 	}
 	
 	public int getQtdMedicacoes() {
