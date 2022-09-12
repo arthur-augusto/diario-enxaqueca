@@ -59,19 +59,19 @@ public class Dados {
 		qtdMedicacoes = 10;
 		
 		doresDeCabeca[0] = new DorDeCabeca("01-09-2022", "01:40", 3, 2, "", "Ambos os lados", 
-				sintomas[0], gatilhos[0], medicacoes[0]);
+				sintomas[0], gatilhos[9], medicacoes[1]);
 		
 		doresDeCabeca[1] = new DorDeCabeca("02-09-2022", "19:38", 1, 1, "Estavam pintando o escritório ao lado", 
-				"Atrás dos olhos", sintomas[0], gatilhos[0], medicacoes[0]);
+				"Atrás dos olhos", sintomas[0], gatilhos[7], medicacoes[5]);
 		
 		doresDeCabeca[2] = new DorDeCabeca("03-09-2022", "16:56", 2, 3,  "", "Lado direito", 
-				sintomas[0], gatilhos[0], medicacoes[0]);
+				sintomas[1], gatilhos[1], medicacoes[2]);
 		
 		doresDeCabeca[3] = new DorDeCabeca("04-09-2022", "01:19", 4, 4,  "", "Ambos os Lados", 
-				sintomas[0], gatilhos[0], medicacoes[0]);
+				sintomas[3], gatilhos[4], medicacoes[3]);
 		
 		doresDeCabeca[4] = new DorDeCabeca("05-09-2022", "21:23", 1, 1,  "", "Testa", 
-				sintomas[0], gatilhos[0], medicacoes[0]);
+				sintomas[2], gatilhos[11], medicacoes[3]);
 		
 		qtdDoresDeCabeca = 5;
 	}
@@ -82,6 +82,11 @@ public class Dados {
 	
 	public void setDoresDeCabeca(DorDeCabeca[] doresDeCabeca) {
 		this.doresDeCabeca = doresDeCabeca;
+	}
+	
+	public void inserirEditarDorDeCabeca(DorDeCabeca dor, int pos) {
+		this.doresDeCabeca[pos] = dor;
+		if(pos == qtdDoresDeCabeca) qtdDoresDeCabeca++;
 	}
 	
 	public int getQtdDoresDeCabeca() {

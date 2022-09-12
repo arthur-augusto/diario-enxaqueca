@@ -50,5 +50,13 @@ public class ControleDados {
 		return this.d.getQtdMedicacoes();
 	}
 	
-	
+	public void inserirAtualizarEntrada(String[] dadoNovo) {
+		
+		DorDeCabeca dor = new DorDeCabeca(dadoNovo[1], dadoNovo[2], Integer.parseInt(dadoNovo[3]),
+				Integer.parseInt(dadoNovo[4]), dadoNovo[9], dadoNovo[5], new SintomaDor("", "", ""),
+				new GatilhoDor("", "", ""), new MedicacaoUtilizada("", "", "", ""));
+		
+		d.inserirEditarDorDeCabeca(dor, Integer.parseInt(dadoNovo[0]));
+		
+	}
 }

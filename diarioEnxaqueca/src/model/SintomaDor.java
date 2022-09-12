@@ -9,25 +9,24 @@ package model;
 
 public class SintomaDor extends InformacaoDor {
 
-	public String duracao_sintoma;
+	public String duracaoSintoma;
 
 	/**
 	 * Cria um tipo de sintoma, que pode estar associado a uma ou várias dores de cabeça
 	 * @param nome	nome da informação.
 	 * @param descricao	informações adicionais.
-	 * @param duracao_sintoma duração do sintoma em horas.
+	 * @param duracaoSintoma duração do sintoma em horas.
 	 */
-	public SintomaDor(String nome, String descricao, String duracao_sintoma) {
+	public SintomaDor(String nome, String descricao, String duracaoSintoma) {
 		super(nome, descricao);
-		this.duracao_sintoma = duracao_sintoma;
+		this.duracaoSintoma = duracaoSintoma;
 	}
 
-	public String getDuracao_sintoma() {
-		return duracao_sintoma;
+	public String getDuracaoSintoma() {
+		return duracaoSintoma;
 	}
 
-	public void setDuracao_sintoma(String duracao_sintoma) {
-		this.duracao_sintoma = duracao_sintoma;
+	public void setDuracaoSintoma(String duracaoSintoma) {
+		this.duracaoSintoma = duracaoSintoma;
 	}
-
 }

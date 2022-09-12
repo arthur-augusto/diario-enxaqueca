@@ -11,15 +11,19 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import control.*;
+
 import java.awt.event.*;
 
 public class TelaInformacoesDor implements ActionListener, ListSelectionListener{
 	
 	private JFrame frameInformacoesDor;
 	
+	private static ControleDados dados;
+	
 	private JList<String> listaInformacoes;
 	
-	String infos[] = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10"};
+	private String[] listaNomes = new String[40];
 	
 	private JButton adicionarInformacao;
 	
@@ -30,12 +34,25 @@ public class TelaInformacoesDor implements ActionListener, ListSelectionListener
 	 * @param info indica qual informação será visualizada
 	 */
 	
-	public TelaInformacoesDor(String info) {
+	public TelaInformacoesDor(String info, ControleDados d) {
 		
 		infoSelecionada = info;
+		dados = d;
+		
+		if(info == "Sintoma") {
+			listaNomes = new ControleSintomaDor(dados).getNomesSintomas();
+		}
+		
+		if(info == "Gatilho") {
+			listaNomes = new ControleGatilhoDor(dados).getNomesGatilhos();
+		}
+		
+		if(info == "Medicação") {
+			listaNomes = new ControleMedicacaoUtilizada(dados).getNomesMedicacoes();
+		}
 		
 		frameInformacoesDor = new JFrame(info);
-		listaInformacoes = new JList<String>(infos);
+		listaInformacoes = new JList<String>(listaNomes);
 		adicionarInformacao = new JButton("ADICIONAR " + info.toUpperCase());
 		
 		frameInformacoesDor.setLayout(null);
@@ -59,7 +76,8 @@ public class TelaInformacoesDor implements ActionListener, ListSelectionListener
 	
 	public void valueChanged(ListSelectionEvent e) {
 		if(e.getValueIsAdjusting()) {
-			new TelaDetalheInformacaoDor().adicionarOuEditarInformacao(infoSelecionada, 1);
+			new TelaDetalheInformacaoDor().adicionarOuEditarInformacao(
+					infoSelecionada, dados, 1, listaInformacoes.getSelectedIndex());
 		}
 	}
 
@@ -67,7 +85,7 @@ public class TelaInformacoesDor implements ActionListener, ListSelectionListener
 		Object src = e.getSource();
 		
 		if(src == adicionarInformacao) {
-			new TelaDetalheInformacaoDor().adicionarOuEditarInformacao(infoSelecionada, 0);
+			new TelaDetalheInformacaoDor().adicionarOuEditarInformacao(infoSelecionada, dados, 0, 0);
 		}
 	}
 }

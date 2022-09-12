@@ -54,6 +54,8 @@ public class TelaDetalheEntrada implements ActionListener {
 	private int posicao;
 	private int opcao;
 	
+	private String[] novoDado = new String[10];
+	
 	private String titulo;
 	
 	/**
@@ -62,9 +64,9 @@ public class TelaDetalheEntrada implements ActionListener {
 	 */
 	public void adicionarOuEditarEntrada (int op, ControleDados d, int pos) {
 		
+		dados = d;
 		opcao = op;
 		posicao = pos;
-		dados = d;
 		
 		if (op == 0) titulo = "Adicionar Entrada";
 		if (op == 1) titulo = "Editar Entrada";
@@ -198,12 +200,15 @@ public class TelaDetalheEntrada implements ActionListener {
 			
 			labelSintoma = new JLabel("Sintoma:");
 			butaoSintoma = new JButton("+");
+			valorSintoma  = new JLabel(dados.getDoresDeCabeca()[pos].getSintomaDor().getNome());
 			
 			labelGatilho = new JLabel("Gatilho:");
 			butaoGatilho = new JButton("+");
+			valorGatilho = new JLabel(dados.getDoresDeCabeca()[pos].getGatilhoDor().getNome());
 			
 			labelMedicacao = new JLabel("Medicação:");
 			butaoMedicacao = new JButton("+");
+			valorMedicacao = new JLabel(dados.getDoresDeCabeca()[pos].getMedicacaoUtilizada().getNome());
 			
 			labelNotas = new JLabel("Notas:");
 			valorNotas = new JTextField(dados.getDoresDeCabeca()[pos].getNotas());
@@ -230,12 +235,15 @@ public class TelaDetalheEntrada implements ActionListener {
 			
 			labelSintoma.setBounds(10, 150, 50, 25);
 			butaoSintoma.setBounds(414, 150, 41, 25);
+			valorSintoma.setBounds(65, 150, 300, 25);
 			
 			labelGatilho.setBounds(10, 185, 50, 25);
 			butaoGatilho.setBounds(414, 185, 41, 25);
+			valorGatilho.setBounds(65, 185, 300, 25);
 			
 			labelMedicacao.setBounds(10, 220, 65, 25);
 			butaoMedicacao.setBounds(414, 220, 41, 25);
+			valorMedicacao.setBounds(80, 220, 300, 25);
 			
 			labelNotas.setBounds(10, 255, 40, 25);
 			valorNotas.setBounds(55, 255, 400, 25);
@@ -262,12 +270,15 @@ public class TelaDetalheEntrada implements ActionListener {
 			
 			frameDetalheEntrada.add(labelSintoma);
 			frameDetalheEntrada.add(butaoSintoma);
+			frameDetalheEntrada.add(valorSintoma);
 			
 			frameDetalheEntrada.add(labelGatilho);
 			frameDetalheEntrada.add(butaoGatilho);
+			frameDetalheEntrada.add(valorGatilho);
 			
 			frameDetalheEntrada.add(labelMedicacao);
 			frameDetalheEntrada.add(butaoMedicacao);
+			frameDetalheEntrada.add(valorMedicacao);
 			
 			frameDetalheEntrada.add(labelNotas);
 			frameDetalheEntrada.add(valorNotas);
@@ -291,15 +302,39 @@ public class TelaDetalheEntrada implements ActionListener {
 		Object src = e.getSource();
 		
 		if(src == butaoSintoma) {
-			new TelaInformacoesDor("Sintoma");
+			new TelaInformacoesDor("Sintoma", dados);
 		}
 		
 		if(src == butaoGatilho) {
-			new TelaInformacoesDor("Gatilho");
+			new TelaInformacoesDor("Gatilho", dados);
 		}
 		
 		if(src == butaoMedicacao) {
-			new TelaInformacoesDor("Medicação");
+			new TelaInformacoesDor("Medicação", dados);
+		}
+		
+		if(src == butaoSalvar) {
+			
+			if(opcao == 0) {
+				novoDado[0] = Integer.toString(dados.getQtdDoresDeCabeca());
+			}
+			else {
+				novoDado[0] = Integer.toString(posicao);
+			}
+			
+			novoDado[1] = valorDia.getText() + "-" + valorMes.getText() + "-" + valorAno.getText();
+			novoDado[2] = valorHora.getText();
+			novoDado[3] = valorDuracao.getText();
+			novoDado[4] = valorPontuacao.getText();
+			novoDado[5] = valorLocal.getText();
+			novoDado[9] = valorNotas.getText();
+			
+			dados.inserirAtualizarEntrada(novoDado);
+			frameDetalheEntrada.dispose();
+		}
+		
+		if(src == butaoExcluir) {
+			
 		}
 	}
 	
