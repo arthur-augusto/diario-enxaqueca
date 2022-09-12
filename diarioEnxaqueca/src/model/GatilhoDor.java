@@ -23,7 +23,6 @@ public class GatilhoDor extends InformacaoDor{
 		this.recorrencia_gatilho = recorrencia_gatilho;
 	}
 
-
 	public String getRecorrencia_gatilho() {
 		return recorrencia_gatilho;
 	}

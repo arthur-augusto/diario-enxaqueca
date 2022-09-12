@@ -9,106 +9,120 @@ package model;
 
 public class DorDeCabeca {
 	
-	private String data_dor;
-	private String hora_inicio;
-	private int duracao_dor;
-	private int pontuacao_dor;
+	private String dataDor;
+	private String horaInicio;
+	private int duracaoDor;
+	private int pontuacaoDor;
 	private String notas;
-	private String local_dor;
-	private SintomaDor sintoma_dor;
-	private GatilhoDor gatilho_dor;
-	private MedicacaoUtilizada medicacao_utilizada;
+	private String localDor;
+	private SintomaDor sintomaDor;
+	private GatilhoDor gatilhoDor;
+	private MedicacaoUtilizada medicacaoUtilizada;
+
+	/**
+	 * Cria uma entrada vazia no diário.
+	 */
+	
+	public DorDeCabeca() {
+		super();
+	}
 	
 	/**
 	 * Cria uma entrada no diário com uma data e hora de inicio, pontuação, etc..
-	 * @param data_dor	data do começo da dor.
-	 * @param hora_inicio	hora de início da dor.
-	 * @param duracao_dor	duração da dor em horas.
-	 * @param pontuacao_dor	pontuação da dor, de 1 a 10.
+	 * @param dataDor	data do começo da dor.
+	 * @param horaInicio	hora de início da dor.
+	 * @param duracaoDor	duração da dor em horas.
+	 * @param pontuacaoDor	pontuação da dor, de 1 a 10.
 	 * @param nota	anotações breves sobre a dor
-	 * @param local_dor	parte da cabeça em que a dor ocorreu.
+	 * @param localDor	parte da cabeça em que a dor ocorreu.
+	 * @param sintomaDor sintoma associado a dor de cabeça.
+	 * @param gatilhoDor gatilhos da dor de cabeça.
+	 * @param medicacaoUtilizada remédio usado para tratar a dor de cabeça.
 	 */
 	
-	public DorDeCabeca(String data_dor, String hora_inicio, int duracao_dor, int pontuacao_dor, String nota,
-			String local_dor) {
+	public DorDeCabeca(String dataDor, String horaInicio, int duracaoDor, int pontuacaoDor, String notas,
+			String localDor, SintomaDor sintomaDor, GatilhoDor gatilhoDor, MedicacaoUtilizada medicacaoUtilizada) {
 		super();
-		this.data_dor = data_dor;
-		this.hora_inicio = hora_inicio;
-		this.duracao_dor = duracao_dor;
-		this.pontuacao_dor = pontuacao_dor;
-		this.notas = nota;
-		this.local_dor = local_dor;
-	}
-	
-	public String getData_dor() {
-		return data_dor;
-	}
-
-	public void setData_dor(String data_dor) {
-		this.data_dor = data_dor;
+		this.dataDor = dataDor;
+		this.horaInicio = horaInicio;
+		this.duracaoDor = duracaoDor;
+		this.pontuacaoDor = pontuacaoDor;
+		this.notas = notas;
+		this.localDor = localDor;
+		this.sintomaDor = sintomaDor;
+		this.gatilhoDor = gatilhoDor;
+		this.medicacaoUtilizada = medicacaoUtilizada;
 	}
 
-	public String getHora_inicio() {
-		return hora_inicio;
+	public String getDataDor() {
+		return dataDor;
 	}
 
-	public void setHora_inicio(String hora_inicio) {
-		this.hora_inicio = hora_inicio;
+	public void setDataDor(String dataDor) {
+		this.dataDor = dataDor;
 	}
 
-	public int getDuracao_dor() {
-		return duracao_dor;
+	public String getHoraInicio() {
+		return horaInicio;
 	}
 
-	public void setDuracao_dor(int duracao_dor) {
-		this.duracao_dor = duracao_dor;
+	public void setHoraInicio(String horaInicio) {
+		this.horaInicio = horaInicio;
 	}
 
-	public int getPontuacao_dor() {
-		return pontuacao_dor;
+	public int getDuracaoDor() {
+		return duracaoDor;
 	}
 
-	public void setPontuacao_dor(int pontuacao_dor) {
-		this.pontuacao_dor = pontuacao_dor;
+	public void setDuracaoDor(int duracaoDor) {
+		this.duracaoDor = duracaoDor;
 	}
 
-	public String getNota() {
+	public int getPontuacaoDor() {
+		return pontuacaoDor;
+	}
+
+	public void setPontuacaoDor(int pontuacaoDor) {
+		this.pontuacaoDor = pontuacaoDor;
+	}
+
+	public String getNotas() {
 		return notas;
 	}
 
-	public void setNota(String nota) {
-		this.notas = nota;
+	public void setNotas(String notas) {
+		this.notas = notas;
 	}
 
-	public String getLocal_dor() {
-		return local_dor;
+	public String getLocalDor() {
+		return localDor;
 	}
 
-	public void setLocal_dor(String local_dor) {
-		this.local_dor = local_dor;
+	public void setLocalDor(String localDor) {
+		this.localDor = localDor;
 	}
 
-	public SintomaDor getSintoma_dor() {
-		return sintoma_dor;
+	public SintomaDor getSintomaDor() {
+		return sintomaDor;
 	}
 
-	public void setSintoma_dor(SintomaDor sintoma_dor) {
-		this.sintoma_dor = sintoma_dor;
+	public void setSintomaDor(SintomaDor sintomaDor) {
+		this.sintomaDor = sintomaDor;
 	}
 
-	public GatilhoDor getGatilho_dor() {
-		return gatilho_dor;
+	public GatilhoDor getGatilhoDor() {
+		return gatilhoDor;
 	}
 
-	public void setGatilho_dor(GatilhoDor gatilho_dor) {
-		this.gatilho_dor = gatilho_dor;
+	public void setGatilhoDor(GatilhoDor gatilhoDor) {
+		this.gatilhoDor = gatilhoDor;
 	}
 
-	public MedicacaoUtilizada getMedicacao_utilizada() {
-		return medicacao_utilizada;
+	public MedicacaoUtilizada getMedicacaoUtilizada() {
+		return medicacaoUtilizada;
 	}
 
-	public void setMedicacao_utilizada(MedicacaoUtilizada medicacao_utilizada) {
-		this.medicacao_utilizada = medicacao_utilizada;
+	public void setMedicacaoUtilizada(MedicacaoUtilizada medicacaoUtilizada) {
+		this.medicacaoUtilizada = medicacaoUtilizada;
 	}
 }
